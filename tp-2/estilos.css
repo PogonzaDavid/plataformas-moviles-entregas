@@ -1,0 +1,96 @@
+/* 1. (color #ee6 #eeee66 - amarillo verdoso claro) */
+body {
+    background-color: #222;
+    color: #ee6;
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* 2. Centrar el título principal */
+h1 {
+    text-align: center;
+}
+
+/* 3.fuente sans-serif */
+p {
+    font-family: sans-serif;
+}
+
+/* 4.color #eee */
+h1, h2, h3 {
+    color: #eee;
+}
+
+/* 5. Borde  blanco */
+strong {
+    border-bottom: 1px solid white;
+}
+
+/* 6. Fondo gris #444 y negrita */
+.the-force {
+    background-color: #444;
+    font-weight: bold;
+}
+
+/* 7. Colores para light-side y dark-side */
+.the-force.light-side {
+    color: #66f;     
+}
+
+.the-force.dark-side {
+    color: #f33;       
+}
+
+/* 8. List-style circle*/
+#og-trilogy {
+    list-style-type: circle;
+}
+
+/* 9. Padding-left  */
+#ep-pre {
+    padding-left: 60px;   
+}
+
+/* 10. Margin-top */
+#episodio_IX {
+    margin-top: 15px;     
+}
+
+/* ────────────── */
+/* Bonus Tracks  */
+/* ─────────── */
+
+/* 11.títulos en mayúsculas */
+h1, h2, h3 {
+    text-transform: uppercase;
+}
+
+/* 12. Primera línea del primer párrafo en #efe  */
+p:first-of-type::first-line {
+    color: #efe;
+}
+
+/* 13. Título principal cambia de color al hover */
+h1:hover {
+    color: #ffeb3b;      
+}
+
+/* 14. Links visitados en gris */
+a:visited {
+    color: #999;
+}
+
+/* 15. Links sin href */
+a:not([href]) {
+    font-style: italic;
+}
+
+/* 16. Fondo alternado en los <li> de TODOS los .movies-list */
+.movies-list li:nth-child(odd) {
+    background-color: #111;
+}
+
+.movies-list li:nth-child(even) {
+    background-color: #333;
+}

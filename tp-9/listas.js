@@ -194,7 +194,15 @@ console.log("ordenarPalabrasPorLongitud(['abc', 'a', 'ab']): ", ordenarPalabrasP
  * - encontrarPalabraMasCorta(['abc', 'a', 'ab', 'c']) retorna 'a'
  */
 function encontrarPalabraMasCorta(listaDePalabras) {
-    //
+  let palabraMasCorta = listaDePalabras[0];
+
+  for (let palabra of listaDePalabras) {
+    if (palabra.length < palabraMasCorta.length) {
+      palabraMasCorta = palabra;
+    }
+  }
+
+  return palabraMasCorta;
 }
 console.log("encontrarPalabraMasCorta(['abc', 'a', 'ab']): ", encontrarPalabraMasCorta(['abc', 'a', 'ab']))
 
@@ -212,7 +220,15 @@ console.log("encontrarPalabraMasCorta(['abc', 'a', 'ab']): ", encontrarPalabraMa
  * - filtrarSoloPositivos([1,-1,2]) retorna [1,2]
  */
 function filtrarSoloPositivos(listaDeNumeros) {
-    //
+  let positivos = [];
+
+  for (let numero of listaDeNumeros) {
+    if (numero > 0) {
+      positivos.push(numero);
+    }
+  }
+
+  return positivos;
 }
 console.log("filtrarSoloPositivos([1,-1,0]): ", filtrarSoloPositivos([1,-1,0]))
 console.log("filtrarSoloPositivos(listaNumerosEjemplo): ", filtrarSoloPositivos(listaNumerosEjemplo))
@@ -231,7 +247,15 @@ console.log("filtrarSoloPositivos(listaNumerosEjemplo): ", filtrarSoloPositivos(
  * - contarAprobados([10,2,9]) retorna 2
  */
 function contarAprobados(listaDeNotas) {
-    //
+  let cantidadAprobados = 0;
+
+  for (let nota of listaDeNotas) {
+    if (nota > 6) {
+      cantidadAprobados++;
+    }
+  }
+
+  return cantidadAprobados;
 }
 console.log("contarAprobados([10, 4, 6, 7, 1, 9]): ", contarAprobados([10, 4, 6, 7, 1, 9]))
 
@@ -249,7 +273,15 @@ console.log("contarAprobados([10, 4, 6, 7, 1, 9]): ", contarAprobados([10, 4, 6,
  * - filtrarSoloTruthy(["Hola", "", 0, 1]) retorna ["Hola", 1]
  */
 function filtrarSoloTruthy(listaDeValores) {
-    // 
+  let valoresTruthy = [];
+
+  for (let valor of listaDeValores) {
+    if (valor) {
+      valoresTruthy.push(valor);
+    }
+  }
+
+  return valoresTruthy;
 }
 console.log("filtrarSoloTruthy(): ", filtrarSoloTruthy(["Hola", "", null, 1, 0, -1, undefined, [], {}]))
 
@@ -266,6 +298,16 @@ console.log("filtrarSoloTruthy(): ", filtrarSoloTruthy(["Hola", "", null, 1, 0, 
  * - enumerarLista(["Han", "Leia", "Luke", "Yoda"]) "Han, Leia, Luke y Yoda."
  */
 function enumerarLista(listaDePalabras) {
-    //
+  let oracion = "";
+
+  for (let i = 0; i < listaDePalabras.length; i++) {
+    if (i === listaDePalabras.length - 1) {
+      oracion += "y " + listaDePalabras[i] + ".";
+    } else {
+      oracion += listaDePalabras[i] + ", ";
+    }
+  }
+
+  return oracion;
 }
 console.log("enumerarLista(): ", enumerarLista(["Han", "Leia", "Luke", "Yoda"]))

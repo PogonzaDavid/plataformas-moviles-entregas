@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10151c" />
+    <meta
+      name="description"
+      content="Explora los campeones de League of Legends: roles, dificultad, recursos e historias."
+    />
+    <title>Campeones | League of Legends</title>
+    <link rel="preconnect" href="https://ddragon.leagueoflegends.com" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+
+    <main>
+      <section class="container catalog-section" aria-labelledby="catalog-title">
+        <div class="catalog-heading">
+          <div>
+            <h2 id="catalog-title">Catálogo de campeones</h2>
+          </div>
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Buscar campeón</span>
+            <input id="search-input" type="search" placeholder="Buscar campeón..." autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="filter-row">
+          <div id="role-filters" class="role-filters" aria-label="Filtrar por rol">
+            <button class="filter-btn active" type="button" data-role="all" aria-pressed="true">Todos</button>
+            <button class="filter-btn" type="button" data-role="Fighter" aria-pressed="false">Luchador</button>
+            <button class="filter-btn" type="button" data-role="Tank" aria-pressed="false">Tanque</button>
+            <button class="filter-btn" type="button" data-role="Mage" aria-pressed="false">Mago</button>
+            <button class="filter-btn" type="button" data-role="Assassin" aria-pressed="false">Asesino</button>
+            <button class="filter-btn" type="button" data-role="Marksman" aria-pressed="false">Tirador</button>
+            <button class="filter-btn" type="button" data-role="Support" aria-pressed="false">Apoyo</button>
+          </div>
+          <label class="sort-control">
+            <span>ORDENAR</span>
+            <select id="sort-select" aria-label="Ordenar campeones">
+              <option value="name">Nombre A–Z</option>
+              <option value="name-desc">Nombre Z–A</option>
+              <option value="difficulty">Dificultad</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="status-message" class="status-message" role="status" aria-live="polite">
+          <span class="loading-spinner" aria-hidden="true"></span>
+          <span>Cargando campeones...</span>
+        </div>
+        <div id="champion-grid" class="row row-cols-2 row-cols-sm-3 row-cols-lg-4 row-cols-xl-5 g-3 g-lg-4" aria-live="polite"></div>
+        <span class="visually-hidden" id="champion-count" aria-live="polite"></span>
+        <span class="visually-hidden" id="version-label"></span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+        <span>RIFT ARCHIVE <span class="footer-dot">·</span> Un catálogo hecho para fans</span>
+        <span>Datos e imágenes proporcionados por Riot Games Data Dragon.</span>
+      </div>
+    </footer>
+
+    <div class="modal fade" id="champion-modal" tabindex="-1" aria-labelledby="modal-name" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content champion-modal-content">
+          <button type="button" class="modal-close" data-bs-dismiss="modal" aria-label="Cerrar">×</button>
+          <div id="modal-body"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
